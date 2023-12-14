@@ -1,3 +1,4 @@
+import { categoriesApi } from "./queries/categories";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import {
   persistStore,
@@ -11,16 +12,21 @@ import {
 } from "redux-persist";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import authSlice from "./slice/authSlice";
+import { doctorsApi } from "./queries/doctors";
+import { hospitalApi } from "./queries/hospitals";
 
 const persistConfig = {
   key: "root",
   version: 1,
   storage: AsyncStorage,
-  whitelist: ["auth"],
+  whitelist: ["auth", "categories", "doctors"],
 };
 
 const appReducer = combineReducers({
   auth: authSlice,
+  [categoriesApi.reducerPath]: categoriesApi.reducer,
+  [doctorsApi.reducerPath]: doctorsApi.reducer,
+  [hospitalApi.reducerPath]: hospitalApi.reducer,
 });
 const persistedReducer = persistReducer(persistConfig, appReducer);
 
@@ -32,6 +38,9 @@ export const store = configureStore({
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
     }),
+    categoriesApi.middleware,
+    doctorsApi.middleware,
+    hospitalApi.middleware,
   ],
 });
 

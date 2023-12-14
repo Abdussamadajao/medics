@@ -18,11 +18,11 @@ module.exports = {
         "medicalGray-2": "#F5F8FF",
         medicalError: "#FF5C5C",
         medicalGray_1: "#E8F3F1",
-      },
-      backgroundImage: {
-        "hero-image":
-          "linear-gradient(180deg,rgba(0, 0, 0, 0.6)," +
-          "rgba(0, 0,0, 0.6)), url('./assets/bg-image.png')",
+        medics_gray: "#ADADAD",
+        medics_black: "#3B4453",
+        medics_gray_2: "#717784",
+        medics_gray_3: "#DEECE9",
+        medics_green: "#E8F3F1",
       },
     },
   },

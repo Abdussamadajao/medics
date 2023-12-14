@@ -9,7 +9,7 @@ import Calendar from "../../assets/Calendar.svg";
 // @ts-ignore
 import ChevenLeft from "../../assets/chevronleft.svg";
 // @ts-ignore
-import ChevenRight from "../../assets/ArrowRight.svg";
+import ChevenRight from "../../assets/arrowright.svg";
 // @ts-ignore
 import Doctor from "../../assets/Doctor.svg";
 // @ts-ignore
@@ -60,7 +60,12 @@ import Corona from "../../assets/Covid.svg";
 import Syringe from "../../assets/Syringe.svg";
 // @ts-ignore
 import Cardiologist from "../../assets/Cardiologist.svg";
-
+// @ts-ignore
+import CalendarGr from "../../assets/calendar-gr.svg";
+// @ts-ignore
+import EditSquare from "../../assets/edit-square.svg";
+// @ts-ignore
+import Visa from "../../assets/visa.svg";
 export {
   Ambulance,
   Apple,
@@ -93,4 +98,7 @@ export {
   Psychiatrist,
   Syringe,
   Teeth,
+  CalendarGr,
+  EditSquare,
+  Visa,
 };

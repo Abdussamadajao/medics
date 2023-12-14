@@ -13,9 +13,10 @@ const Menu = ({ menu: { Icon, content, route } }: Props) => {
   return (
     <TouchableOpacity
       onPress={() => navigation.navigate(route)}
-      className='items-center gap-6'>
+      className="items-center"
+    >
       <Icon />
-      <Text className='text-sm text-medical'>{content}</Text>
+      <Text className="text-sm text-medical">{content}</Text>
     </TouchableOpacity>
   );
 };

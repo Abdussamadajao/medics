@@ -70,20 +70,21 @@ const LoginScreen = () => {
   };
 
   return (
-    <SafeAreaView className='px-6 pt-5'>
-      <View className='flex-row justify-center  items-center h-[66px]'>
+    <SafeAreaView className="px-6 pt-5">
+      <View className="flex-row justify-center  items-center h-[66px]">
         <TouchableOpacity onPress={() => navigation.goBack()}>
           <Chevronleft />
         </TouchableOpacity>
 
-        <Text className='flex-1 text-lg font-bold text-center text-primaryDark'>
+        <Text className="flex-1 text-lg font-bold text-center text-primaryDark">
           Login
         </Text>
       </View>
       <Formik
         initialValues={initialValues}
         onSubmit={(values) => onSubmit(values)}
-        validationSchema={loginSchema}>
+        validationSchema={loginSchema}
+      >
         {({
           values,
           errors,
@@ -94,13 +95,13 @@ const LoginScreen = () => {
           setFieldTouched,
         }: FormikProps<FormValues>) => (
           <>
-            <View className='relative mt-6 mb-14'>
+            <View className="relative mt-6 mb-14">
               <Input
                 value={values.email}
                 error={errors?.email}
                 icon={"email-outline"}
                 onFocus={() => setFieldTouched("email")}
-                placeholder='Enter your email'
+                placeholder="Enter your email"
                 onChangeText={handleChange("email")}
                 touched={touched.email}
               />
@@ -111,14 +112,15 @@ const LoginScreen = () => {
                 onFocus={() => setFieldTouched("password")}
                 password
                 error={errors.password}
-                placeholder='Enter your password'
+                placeholder="Enter your password"
                 onChangeText={handleChange("password")}
                 touched={touched.password}
               />
               <TouchableOpacity
                 onPress={() => navigation.navigate("ForgotPassword")}
-                className='absolute right-0 px-2 -bottom-2'>
-                <Text className='text-sm font-medium text-primary'>
+                className="absolute right-0 px-2 -bottom-2"
+              >
+                <Text className="text-sm font-medium text-primary">
                   Forgot Password?
                 </Text>
               </TouchableOpacity>
@@ -130,16 +132,18 @@ const LoginScreen = () => {
                 }}
                 disabled={!isValid}
                 style={{ backgroundColor: isValid ? "#199A8E" : "#A1A8B0" }}
-                className='items-center justify-center w-full h-12 rounded-full '>
-                <Text className='text-base font-semibold leading-6 text-white'>
+                className="items-center justify-center w-full h-12 rounded-full "
+              >
+                <Text className="text-base font-semibold leading-6 text-white">
                   Login
                 </Text>
               </TouchableOpacity>
-              <Text className='mt-6 mx-auto tracking-[.5px] text-primaryGray text-[15px] leading-6'>
+              <Text className="mt-6 mx-auto tracking-[.5px] text-primaryGray text-[15px] leading-6">
                 Don’t have an account?
                 <Text
-                  className=' text-primary'
-                  onPress={() => navigation.navigate("Register")}>
+                  className=" text-primary"
+                  onPress={() => navigation.navigate("Register")}
+                >
                   {" "}
                   Sign Up
                 </Text>
@@ -149,28 +153,28 @@ const LoginScreen = () => {
         )}
       </Formik>
 
-      <View className='mt-[29px] flex-col gap-[24px]'>
-        <View className='flex-row items-center justify-center '>
-          <Text className='border-b flex-1 mx-[10px] border-medical' />
-          <Text className='mt-4 text-base text-medical'>OR</Text>
-          <Text className='border-b flex-1 mx-[10px] border-medical' />
+      <View className="mt-[29px] flex-col gap-[24px]">
+        <View className="flex-row items-center justify-center ">
+          <Text className="border-b flex-1 mx-[10px] border-medical" />
+          <Text className="mt-4 text-base text-medical">OR</Text>
+          <Text className="border-b flex-1 mx-[10px] border-medical" />
         </View>
-        <View className='gap-[16px] justify-center items-center'>
-          <TouchableOpacity className='flex-row items-center justify-between w-full h-12 pl-4 pr-24 border rounded-full border-primaryGray'>
+        <View className="gap-[16px] justify-center items-center">
+          <TouchableOpacity className="flex-row items-center justify-between w-full h-12 pl-4 pr-24 border rounded-full border-primaryGray">
             <Google />
-            <Text className='text-base font-semibold text-center'>
+            <Text className="text-base font-semibold text-center">
               Sign in with Google
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity className='flex-row items-center justify-between w-full h-12 pl-4 pr-24 border rounded-full border-primaryGray'>
+          <TouchableOpacity className="flex-row items-center justify-between w-full h-12 pl-4 pr-24 border rounded-full border-primaryGray">
             <Apple />
-            <Text className='text-base font-semibold text-center'>
+            <Text className="text-base font-semibold text-center">
               Sign in with Apple
             </Text>
           </TouchableOpacity>
-          <TouchableOpacity className='flex-row items-center justify-between w-full h-12 pl-4 pr-24 border rounded-full border-primaryGray'>
+          <TouchableOpacity className="flex-row items-center justify-between w-full h-12 pl-4 pr-24 border rounded-full border-primaryGray">
             <Facebook />
-            <Text className='text-base font-semibold text-center'>
+            <Text className="text-base font-semibold text-center">
               Sign in with Facebook
             </Text>
           </TouchableOpacity>
@@ -178,12 +182,12 @@ const LoginScreen = () => {
       </View>
 
       <CustomModal
-        content='Once again you login successfully
-        into medidoc app'
-        actionText='Go to Home'
+        content="Once again you login successfully
+        into medidoc app"
+        actionText="Go to Home"
         onPress={handleModal}
         open={isModalOpen}
-        title='Yeay! Welcome Back'
+        title="Yeay! Welcome Back"
         icon
       />
     </SafeAreaView>

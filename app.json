@@ -4,10 +4,10 @@
     "slug": "medical-kit",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/medics-icon.jpg",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/medics-splash.jpg",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },

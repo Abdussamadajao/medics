@@ -17,6 +17,12 @@ import { useAppSelector } from "../../redux/hooks";
 import Doctor from "../../screens/Doctor";
 import Main from "../main";
 import FindDoctors from "../../screens/FindDoctors";
+import DoctorDetails from "../../screens/Doctor-details";
+import BookinkDoctor from "../../screens/Booking";
+import Pharmacy from "../../screens/Pharmacy";
+
+import Hospitals from "../../screens/Hospitals";
+import HospitalDetails from "../../screens/Hospital-details";
 
 export type ScreenNames = [
   "Doctor",
@@ -28,7 +34,12 @@ export type ScreenNames = [
   "Verification",
   "createPassword",
   "Main",
-  "FindDoctors"
+  "FindDoctors",
+  "doctor-details",
+  "booking",
+  "pharmacy",
+  "hospitals",
+  "hospital-details"
 ];
 export type RootStackParamList = Record<ScreenNames[number], undefined>;
 export type StackNavigation = NavigationProp<RootStackParamList>;
@@ -44,7 +55,7 @@ const OnBoardingStack = () => {
         options={{
           headerShown: false,
         }}
-        name='onBoarding'
+        name="onBoarding"
         component={OnBoardingScreen}
       />
     </Stack.Navigator>
@@ -58,42 +69,42 @@ const AuthStack = () => {
         options={{
           headerShown: false,
         }}
-        name='Auth'
+        name="Auth"
         component={AuthScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
-        name='Login'
+        name="Login"
         component={LoginScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
-        name='Register'
+        name="Register"
         component={RegisterScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
-        name='ForgotPassword'
+        name="ForgotPassword"
         component={ForgotPasswordScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
-        name='Verification'
+        name="Verification"
         component={VerificationScreen}
       />
       <Stack.Screen
         options={{
           headerShown: false,
         }}
-        name='createPassword'
+        name="createPassword"
         component={CreatePasswordScreen}
       />
     </Stack.Navigator>
@@ -108,22 +119,57 @@ const MainStack = () => {
           options={{
             headerShown: false,
           }}
-          name='Main'
+          name="Main"
           component={Main}
         />
         <Stack.Screen
           options={{
             headerShown: false,
           }}
-          name='Doctor'
+          name="Doctor"
           component={Doctor}
         />
         <Stack.Screen
           options={{
             headerShown: false,
           }}
-          name='FindDoctors'
+          name="FindDoctors"
           component={FindDoctors}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="doctor-details"
+          component={DoctorDetails}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="booking"
+          component={BookinkDoctor}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="pharmacy"
+          component={Pharmacy}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="hospitals"
+          component={Hospitals}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="hospital-details"
+          component={HospitalDetails}
         />
       </Stack.Navigator>
     </>

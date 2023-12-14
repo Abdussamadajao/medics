@@ -15,7 +15,15 @@ import {
   Teeth,
   Wallet,
 } from "../constants/icons";
-import { ICategory, IDoctor, IMenu, IProfile, OnBoarding } from "./types";
+import {
+  ICategory,
+  IDoctor,
+  IMenu,
+  IProfile,
+  ITime,
+  OnBoarding,
+  ScheduleProps,
+} from "./types";
 export const OnBoardingData: OnBoarding[] = [
   {
     id: "1",
@@ -46,12 +54,12 @@ export const MenuData: IMenu[] = [
   {
     Icon: Drug,
     content: "Pharmacy",
-    route: "",
+    route: "pharmacy",
   },
   {
     Icon: Hospital,
     content: "Hospital",
-    route: "",
+    route: "hospitals",
   },
   {
     Icon: Ambulance,
@@ -62,9 +70,11 @@ export const MenuData: IMenu[] = [
 
 export const Docotrs: IDoctor[] = [
   {
+    id: "1",
     image:
       "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892631/medical-kit/pexels-cedric-fauntleroy-4270371_uvu2mu.png",
-    name: "Dr. Marcus Horizon",
+    first_name: "Marcus ",
+    last_name: "Horizon",
     rating: "4.7",
     location: "800m",
     category: "Chardiologist",
@@ -72,9 +82,11 @@ export const Docotrs: IDoctor[] = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
   },
   {
+    id: "2",
     image:
       "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892627/medical-kit/pexels-evelina-zhu-5434019_ugoir0.png",
-    name: "Dr. Maria Elena",
+    first_name: "Maria",
+    last_name: "Elena",
     rating: "4.0",
     location: "1.5km",
     about:
@@ -82,9 +94,12 @@ export const Docotrs: IDoctor[] = [
     category: "Psychologist",
   },
   {
+    id: "3",
     image:
       "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892624/medical-kit/pexels-thirdman-5327580_dx85u6.png",
-    name: "Dr. Stefi Jessi",
+
+    first_name: "Stevi ",
+    last_name: "Jessi",
     rating: "3.7",
     location: "2km",
     category: "Orthopedist",
@@ -94,17 +109,23 @@ export const Docotrs: IDoctor[] = [
   {
     image:
       "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892622/medical-kit/pexels-thirdman-5327656_jolu0t.png",
-    name: "Dr. Gerty Cori",
     rating: "3.5",
     location: "100m",
+
+    id: "4",
     category: "Orthopedist",
     about:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...",
+    first_name: "Gerty",
+    last_name: "Cori",
   },
   {
+    id: "5",
     image:
       "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892615/medical-kit/pexels-anthony-shkraba-5215024_1_y44nwn.png",
-    name: "Dr. Diandra",
+
+    first_name: "Diandra",
+    last_name: "",
     rating: "2.0",
     location: "10km",
     category: "Orthopedist",
@@ -142,31 +163,93 @@ export const profileData: IProfile[] = [
 
 export const categories: ICategory[] = [
   {
+    id: "1",
     Icon: Doctor,
     content: "General",
   },
   {
+    id: "2",
     Icon: Lungs,
     content: "Lungs Specialist",
   },
   {
+    id: "3",
     Icon: Teeth,
     content: "Dentist",
   },
   {
+    id: "4",
     Icon: Psychiatrist,
     content: "Psychiatrist",
   },
   {
+    id: "5",
     Icon: Corona,
     content: "Covid-19",
   },
   {
+    id: "6",
     Icon: Syringe,
     content: "Surgeon",
   },
   {
+    id: "7",
     Icon: Cardiologist,
     content: "Cardiologist",
+  },
+];
+
+export const times: ITime[] = [
+  { id: "1", time: "09:00 AM" },
+  { id: "2", time: "10:00 AM" },
+  { id: "3", time: "11:00 AM" },
+  { id: "4", time: "01:00 PM" },
+  { id: "5", time: "02:00 PM" },
+  { id: "6", time: "03:00 PM" },
+  { id: "7", time: "04:00 PM" },
+  { id: "8", time: "07:00 PM" },
+  { id: "9", time: "08:00 PM" },
+];
+
+export const schedule: ScheduleProps[] = [
+  {
+    date: "26/06/2022",
+    doctor: "Marcus Horizon",
+    status: "upcoming",
+    time: "10:00 AM",
+    category: "Chardiologist",
+    image:
+      "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892631/medical-kit/pexels-cedric-fauntleroy-4270371_uvu2mu.png",
+    doctorId: "1",
+  },
+  {
+    date: "26/06/2022",
+    doctor: "Diandra",
+    status: "completed",
+    time: "2:00 PM",
+    category: "Orthopedist",
+    image:
+      "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892615/medical-kit/pexels-anthony-shkraba-5215024_1_y44nwn.png",
+    doctorId: "5",
+  },
+  {
+    date: "26/06/2022",
+    doctor: "Gerty Cori",
+    status: "canceled",
+    time: "2:00 PM",
+    category: "Orthopedist",
+    image:
+      "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892622/medical-kit/pexels-thirdman-5327656_jolu0t.png",
+    doctorId: "4",
+  },
+  {
+    date: "26/06/2022",
+    doctor: "Marcus Horizon",
+    status: "upcoming",
+    time: "10:00 AM",
+    category: "Chardiologist",
+    image:
+      "https://res.cloudinary.com/dtczskyoz/image/upload/v1694892631/medical-kit/pexels-cedric-fauntleroy-4270371_uvu2mu.png",
+    doctorId: "1",
   },
 ];
